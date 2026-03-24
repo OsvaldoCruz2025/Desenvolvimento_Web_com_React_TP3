@@ -1,4 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
 .App {
-  font-family: sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App h1 {
+  color: white;
   text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.exercises-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.exercise {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.exercise:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.exercise h3 {
+  color: #667eea;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+
+.exercise h4 {
+  color: #764ba2;
+  margin: 20px 0 10px 0;
+  font-size: 1.1rem;
+}
+
+.exercise input[type="text"],
+.exercise input[type="email"],
+.exercise input[type="password"],
+.exercise input[type="tel"],
+.exercise input[type="number"],
+.exercise textarea,
+.exercise select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.exercise input:focus,
+.exercise textarea:focus,
+.exercise select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.exercise button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 5px 0 0;
+  transition: opacity 0.3s, transform 0.1s;
+}
+
+.exercise button:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.exercise button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.exercise button.ativo {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.exercise button.inativo {
+  background: #ccc;
+}
+
+.exercise label {
+  display: block;
+  margin: 12px 0 5px 0;
+  color: #333;
+  font-weight: 500;
+}
+
+.exercise input[type="checkbox"],
+.exercise input[type="radio"] {
+  width: auto;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.exercise p {
+  margin: 12px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.exercise .resultado,
+.exercise .resumo,
+.exercise .resumo-cadastro {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-left: 4px solid #667eea;
+}
+
+.exercise .resumo h4,
+.exercise .resumo-cadastro h4 {
+  margin-top: 0;
+  color: #667eea;
+}
+
+.exercise .lista-tarefas ul {
+  list-style: none;
+  padding: 0;
+}
+
+.exercise .lista-tarefas li {
+  background: #f9f9f9;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 3px solid #667eea;
+}
+
+.exercise .lista-tarefas button {
+  background: #e74c3c;
+  padding: 6px 12px;
+  font-size: 12px;
+  margin: 0;
+}
+
+.exercise .lista-tarefas button:hover {
+  background: #c0392b;
+}
+
+.exercise .form-group {
+  margin-bottom: 20px;
+}
+
+.exercise .form-group label {
+  margin-bottom: 5px;
+}
+
+.exercise .erro {
+  color: #e74c3c;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+.exercise .adicionar-tarefa,
+.exercise .filtro {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.exercise form {
+  margin-top: 10px;
+}
+
+.exercise form > div {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .exercises-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .App h1 {
+    font-size: 1.8rem;
+  }
+  
+  .exercise {
+    padding: 20px;
+  }
 }
